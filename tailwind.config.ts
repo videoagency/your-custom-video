@@ -57,6 +57,12 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        "gradient-start": "hsl(var(--gradient-start))",
+        "gradient-end": "hsl(var(--gradient-end))",
+      },
+      fontFamily: {
+        sans: ['Inter Variable', 'system-ui', 'sans-serif'],
+        display: ['Cabinet Grotesk', 'Inter Variable', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
