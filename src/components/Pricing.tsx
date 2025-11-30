@@ -74,7 +74,7 @@ const Pricing = () => {
               <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${tier.gradient} mb-6`} />
               <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
               <p className="text-muted-foreground mb-4">{tier.description}</p>
-              <div className="text-4xl font-bold gradient-text mb-6">{tier.price}</div>
+              <div className="text-4xl font-bold text-foreground mb-6">{tier.price}</div>
             </motion.div>
           ))}
         </div>

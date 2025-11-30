@@ -17,8 +17,7 @@ const FinalCTA = () => {
           className="text-center max-w-4xl mx-auto"
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-8 leading-tight">
-            Ready to Get a Custom Video That Drives{" "}
-            <span className="gradient-text">Real Results</span>?
+            Ready to Get a Custom Video That Drives Real Results?
           </h2>
           
           <p className="text-xl sm:text-2xl text-muted-foreground mb-12">
