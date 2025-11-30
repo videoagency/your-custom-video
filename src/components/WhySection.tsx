@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 const features = [
-  "Fast turnaround (48–72 hours)",
+  "Fast turnaround (7–14 days)",
   "Transparent pricing",
   "No agency overhead or delays",
   "Expert creators + AI precision"
@@ -22,7 +22,7 @@ const WhySection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-6">
-            Why <span className="gradient-text">CustomVideos.ai</span>
+            Why CustomVideos.ai
           </h2>
           <p className="text-2xl sm:text-3xl text-foreground max-w-4xl mx-auto leading-relaxed">
             High-Quality Video Production — Without the Slow, Expensive Agency Process

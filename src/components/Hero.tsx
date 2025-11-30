@@ -38,10 +38,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold mb-6 leading-tight"
           >
-            Custom Videos That{" "}
-            <span className="gradient-text">Convert</span>.{" "}
-            Created <span className="gradient-text">Fast</span>.{" "}
-            Priced <span className="gradient-text">Fair</span>.
+            Custom Videos That Convert. Created Fast. Priced Fair.
           </motion.h1>
 
           {/* Subheadline */}
@@ -51,7 +48,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-xl sm:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            Get premium, studio-quality videos crafted by expert creators and enhanced with AI precision — delivered in as little as 48–72 hours.
+            Get premium, studio-quality videos crafted by expert creators and enhanced with AI precision — delivered in as little as 7–14 days.
           </motion.p>
 
           {/* CTA Buttons */}

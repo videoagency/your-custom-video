@@ -4,7 +4,7 @@ import { Check, X } from "lucide-react";
 const comparisonData = [
   { 
     category: "Turnaround", 
-    customVideos: "48–72 hours", 
+    customVideos: "7–14 days", 
     traditional: "2–6+ weeks",
     customVideosBetter: true
   },
@@ -68,7 +68,7 @@ const Comparison = () => {
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-6">
             Why We're Different
           </h2>
-          <p className="text-2xl sm:text-3xl gradient-text font-semibold">
+          <p className="text-2xl sm:text-3xl text-foreground font-semibold">
             A Premier Video Agency — Rebuilt for the AI Era
           </p>
         </motion.div>
