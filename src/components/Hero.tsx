@@ -63,7 +63,7 @@ const Hero = () => {
               size="lg"
               className="gradient-primary text-white hover:opacity-90 transition-opacity text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 shadow-glow-lg w-full sm:w-auto"
             >
-              <a href="https://cal.com/customvideos/15min" target="_blank" rel="noopener noreferrer">
+              <a href="https://cal.com/customvideos/meeting" target="_blank" rel="noopener noreferrer">
                 Book Your Free Strategy Call
               </a>
             </Button>
