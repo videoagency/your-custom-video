@@ -10,7 +10,7 @@ const comparisonData = [
   },
   { 
     category: "Pricing", 
-    customVideos: "$1,200–$5,000", 
+    customVideos: "$300–$8,000", 
     traditional: "$10,000–$50,000+",
     customVideosBetter: true
   },
@@ -80,7 +80,8 @@ const Comparison = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="max-w-5xl mx-auto overflow-hidden"
         >
-          <div className="bg-card rounded-3xl shadow-glow-lg overflow-hidden">
+          {/* Desktop table view */}
+          <div className="hidden md:block bg-card rounded-3xl shadow-glow-lg overflow-hidden">
             {/* Table header */}
             <div className="grid grid-cols-3 gap-4 p-6 bg-muted/50 border-b border-border">
               <div></div>
@@ -111,14 +112,48 @@ const Comparison = () => {
                 <div className="font-semibold text-foreground">{row.category}</div>
                 <div className="text-center">
                   <div className="inline-flex items-center gap-2 bg-primary/10 text-primary py-2 px-4 rounded-xl font-medium">
-                    <Check className="w-4 h-4" />
-                    {row.customVideos}
+                    <Check className="w-4 h-4 flex-shrink-0" />
+                    <span className="text-sm">{row.customVideos}</span>
                   </div>
                 </div>
                 <div className="text-center">
                   <div className="inline-flex items-center gap-2 text-muted-foreground py-2 px-4">
-                    <X className="w-4 h-4" />
-                    {row.traditional}
+                    <X className="w-4 h-4 flex-shrink-0" />
+                    <span className="text-sm">{row.traditional}</span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Mobile card view */}
+          <div className="md:hidden space-y-4">
+            {comparisonData.map((row, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.05 * index }}
+                className="bg-card rounded-2xl shadow-glow p-6 space-y-4"
+              >
+                <h3 className="font-bold text-lg text-foreground mb-3">{row.category}</h3>
+                
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-semibold text-primary mb-1">CustomVideos.ai</div>
+                      <div className="text-sm text-foreground">{row.customVideos}</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <X className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-semibold text-muted-foreground mb-1">Traditional Agencies</div>
+                      <div className="text-sm text-muted-foreground">{row.traditional}</div>
+                    </div>
                   </div>
                 </div>
               </motion.div>

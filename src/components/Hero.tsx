@@ -61,7 +61,7 @@ const Hero = () => {
             <Button
               asChild
               size="lg"
-              className="gradient-primary text-white hover:opacity-90 transition-opacity text-lg px-8 py-6 shadow-glow-lg"
+              className="gradient-primary text-white hover:opacity-90 transition-opacity text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 shadow-glow-lg w-full sm:w-auto"
             >
               <a href="https://cal.com/customvideos/15min" target="_blank" rel="noopener noreferrer">
                 Book Your Free Strategy Call
@@ -71,7 +71,7 @@ const Hero = () => {
               asChild
               size="lg"
               variant="outline"
-              className="text-lg px-8 py-6 border-2 hover:bg-muted"
+              className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 border-2 hover:bg-muted w-full sm:w-auto"
             >
               <a href="#examples">See Examples</a>
             </Button>

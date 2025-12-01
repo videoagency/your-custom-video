@@ -4,20 +4,20 @@ import { Check } from "lucide-react";
 const pricingTiers = [
   {
     name: "Starter Video",
-    price: "$1,200",
+    price: "$300–$500",
     description: "Perfect for getting started",
     gradient: "from-blue-500 to-cyan-500"
   },
   {
     name: "Pro Video",
-    price: "$2,000–$3,000",
+    price: "$1,000–$1,500",
     description: "Most popular choice",
     gradient: "from-purple-500 to-pink-500",
     popular: true
   },
   {
     name: "Premium Video",
-    price: "$3,500–$5,000",
+    price: "$4,000–$8,000",
     description: "Full premium experience",
     gradient: "from-orange-500 to-red-500"
   }
