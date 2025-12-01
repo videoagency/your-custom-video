@@ -86,7 +86,7 @@ const BookCallSection = () => {
                 size="lg"
                 className="gradient-primary text-white hover:opacity-90 transition-opacity text-xl px-12 py-7 shadow-glow-lg"
               >
-                <a href="https://cal.com/customvideos/15min" target="_blank" rel="noopener noreferrer">
+                <a href="https://cal.com/customvideos/meeting" target="_blank" rel="noopener noreferrer">
                   Schedule Your Free Call Now
                 </a>
               </Button>

@@ -29,7 +29,7 @@ const FinalCTA = () => {
             size="lg"
             className="gradient-primary text-white hover:opacity-90 transition-opacity text-xl px-12 py-8 shadow-glow-lg text-lg"
           >
-            <a href="https://cal.com/customvideos/15min" target="_blank" rel="noopener noreferrer">
+            <a href="https://cal.com/customvideos/meeting" target="_blank" rel="noopener noreferrer">
               Book Your Free Strategy Call
             </a>
           </Button>
