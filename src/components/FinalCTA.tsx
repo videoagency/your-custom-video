@@ -27,7 +27,7 @@ const FinalCTA = () => {
           <Button
             asChild
             size="lg"
-            className="gradient-primary text-white hover:opacity-90 transition-opacity text-base sm:text-xl px-6 sm:px-12 py-5 sm:py-8 shadow-glow-lg w-full sm:w-auto max-w-md"
+            className="gradient-primary text-white hover:opacity-90 transition-opacity text-xl px-12 py-8 shadow-glow-lg text-lg"
           >
             <a href="https://cal.com/customvideos/meeting" target="_blank" rel="noopener noreferrer">
               Book Your Free Strategy Call

@@ -24,7 +24,7 @@ const VideoSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-5xl mx-auto px-0 sm:px-4"
+          className="max-w-5xl mx-auto"
         >
           <div className="relative rounded-3xl overflow-hidden shadow-glow-lg aspect-video bg-muted">
             <iframe
