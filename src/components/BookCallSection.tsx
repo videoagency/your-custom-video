@@ -84,7 +84,7 @@ const BookCallSection = () => {
               <Button
                 asChild
                 size="lg"
-                className="gradient-primary text-white hover:opacity-90 transition-opacity text-base sm:text-xl px-8 sm:px-12 py-6 sm:py-7 shadow-glow-lg w-full sm:w-auto"
+                className="gradient-primary text-white hover:opacity-90 transition-opacity text-xl px-12 py-7 shadow-glow-lg"
               >
                 <a href="https://cal.com/customvideos/meeting" target="_blank" rel="noopener noreferrer">
                   Schedule Your Free Call Now
