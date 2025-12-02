@@ -1,25 +1,28 @@
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { Check, Sparkles, Star, Crown } from "lucide-react";
 
 const pricingTiers = [
   {
     name: "Starter Video",
     price: "$300–$500",
     description: "Perfect for getting started",
-    gradient: "from-blue-500 to-cyan-500"
+    gradient: "from-blue-500 to-cyan-500",
+    icon: Sparkles
   },
   {
     name: "Pro Video",
     price: "$1,000–$1,500",
     description: "Most popular choice",
     gradient: "from-purple-500 to-pink-500",
-    popular: true
+    popular: true,
+    icon: Star
   },
   {
     name: "Premium Video",
     price: "$4,000–$8,000",
     description: "Full premium experience",
-    gradient: "from-orange-500 to-red-500"
+    gradient: "from-orange-500 to-red-500",
+    icon: Crown
   }
 ];
 
@@ -52,31 +55,36 @@ const Pricing = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
-          {pricingTiers.map((tier, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 * index }}
-              className={`bg-card p-8 rounded-3xl shadow-glow relative ${
-                tier.popular ? 'ring-2 ring-primary' : ''
-              }`}
-            >
-              {tier.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <div className="gradient-primary text-white text-sm font-bold px-4 py-2 rounded-full">
-                    Most Popular
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto mb-16">
+          {pricingTiers.map((tier, index) => {
+            const Icon = tier.icon;
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 * index }}
+                className={`bg-card p-8 rounded-3xl shadow-glow relative text-center ${
+                  tier.popular ? 'ring-2 ring-primary' : ''
+                }`}
+              >
+                {tier.popular && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                    <div className="gradient-primary text-white text-sm font-bold px-4 py-2 rounded-full">
+                      Most Popular
+                    </div>
                   </div>
+                )}
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${tier.gradient} mb-6 mx-auto flex items-center justify-center`}>
+                  <Icon className="w-8 h-8 text-white" />
                 </div>
-              )}
-              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${tier.gradient} mb-6`} />
-              <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
-              <p className="text-muted-foreground mb-4">{tier.description}</p>
-              <div className="text-4xl font-bold text-foreground mb-6">{tier.price}</div>
-            </motion.div>
-          ))}
+                <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
+                <p className="text-muted-foreground mb-4">{tier.description}</p>
+                <div className="text-3xl sm:text-4xl font-bold text-foreground">{tier.price}</div>
+              </motion.div>
+            );
+          })}
         </div>
 
         <motion.div
