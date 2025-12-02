@@ -60,7 +60,7 @@ const BookCallSection = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.1 * index }}
-                    className="flex gap-4 bg-background/50 backdrop-blur-sm p-6 rounded-2xl"
+                    className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-4 bg-background/50 backdrop-blur-sm p-6 rounded-2xl text-center sm:text-left"
                   >
                     <div className="flex-shrink-0 w-12 h-12 rounded-xl gradient-primary flex items-center justify-center">
                       <Icon className="w-6 h-6 text-white" />
@@ -84,7 +84,7 @@ const BookCallSection = () => {
               <Button
                 asChild
                 size="lg"
-                className="gradient-primary text-white hover:opacity-90 transition-opacity text-xl px-12 py-7 shadow-glow-lg"
+                className="gradient-primary text-white hover:opacity-90 transition-opacity text-base sm:text-xl px-6 sm:px-12 py-5 sm:py-7 shadow-glow-lg w-full sm:w-auto"
               >
                 <a href="https://cal.com/customvideos/meeting" target="_blank" rel="noopener noreferrer">
                   Schedule Your Free Call Now
