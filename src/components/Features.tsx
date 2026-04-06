@@ -26,39 +26,37 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div className="absolute inset-0 bg-muted/30" />
-      
+    <section className="section-padding relative overflow-hidden bg-muted/40">
       <div className="container mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-[-0.03em]">
             Additional Features
           </h2>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 * index }}
-                className="bg-card p-8 rounded-3xl shadow-glow"
+                transition={{ duration: 0.5, delay: 0.08 * index }}
+                className="bg-background border border-border/60 p-7 rounded-2xl shadow-glow"
               >
-                <div className="w-14 h-14 rounded-2xl gradient-primary flex items-center justify-center mb-4">
-                  <Icon className="w-7 h-7 text-white" />
+                <div className="w-11 h-11 rounded-xl bg-foreground flex items-center justify-center mb-5">
+                  <Icon className="w-5 h-5 text-background" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
+                <h3 className="text-base font-semibold mb-2">{feature.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
               </motion.div>
             );
           })}
