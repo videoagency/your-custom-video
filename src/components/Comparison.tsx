@@ -54,21 +54,19 @@ const comparisonData = [
 
 const Comparison = () => {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div className="absolute inset-0 bg-muted/30" />
-      
+    <section className="section-padding relative overflow-hidden bg-muted/40">
       <div className="container mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-[-0.03em]">
             Why We're Different
           </h2>
-          <p className="text-2xl sm:text-3xl text-foreground font-semibold">
+          <p className="text-xl sm:text-2xl text-foreground font-medium">
             A Premier Video Agency — Rebuilt for the AI Era
           </p>
         </motion.div>
@@ -77,82 +75,72 @@ const Comparison = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-5xl mx-auto overflow-hidden"
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="max-w-4xl mx-auto"
         >
           {/* Desktop table view */}
-          <div className="hidden md:block bg-card rounded-3xl shadow-glow-lg overflow-hidden">
+          <div className="hidden md:block bg-background rounded-2xl shadow-elevated overflow-hidden border border-border/60">
             {/* Table header */}
-            <div className="grid grid-cols-3 gap-4 p-6 bg-muted/50 border-b border-border">
-              <div></div>
-              <div className="text-center">
-                <div className="gradient-primary text-white font-bold py-3 px-4 rounded-2xl text-lg">
-                  CustomVideos.ai
-                </div>
+            <div className="grid grid-cols-3 gap-0 border-b border-border">
+              <div className="p-5 text-sm font-semibold text-muted-foreground uppercase tracking-wider"></div>
+              <div className="p-5 text-center border-l border-border">
+                <span className="text-sm font-bold text-foreground">CustomVideos.ai</span>
               </div>
-              <div className="text-center">
-                <div className="bg-muted py-3 px-4 rounded-2xl text-lg font-semibold text-muted-foreground">
-                  Traditional Agencies
-                </div>
+              <div className="p-5 text-center border-l border-border">
+                <span className="text-sm font-medium text-muted-foreground">Traditional Agencies</span>
               </div>
             </div>
 
             {/* Table rows */}
             {comparisonData.map((row, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.05 * index }}
-                className={`grid grid-cols-3 gap-4 p-6 items-center ${
-                  index !== comparisonData.length - 1 ? 'border-b border-border' : ''
-                }`}
+                className={`grid grid-cols-3 gap-0 items-center ${
+                  index !== comparisonData.length - 1 ? 'border-b border-border/60' : ''
+                } ${index % 2 === 0 ? 'bg-muted/20' : ''}`}
               >
-                <div className="font-semibold text-foreground">{row.category}</div>
-                <div className="text-center">
-                  <div className="inline-flex items-center gap-2 bg-primary/10 text-primary py-2 px-4 rounded-xl font-medium">
-                    <Check className="w-4 h-4 flex-shrink-0" />
-                    <span className="text-sm">{row.customVideos}</span>
-                  </div>
+                <div className="p-5 text-sm font-semibold text-foreground">{row.category}</div>
+                <div className="p-5 text-center border-l border-border/60">
+                  <span className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground">
+                    <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                    {row.customVideos}
+                  </span>
                 </div>
-                <div className="text-center">
-                  <div className="inline-flex items-center gap-2 text-muted-foreground py-2 px-4">
-                    <X className="w-4 h-4 flex-shrink-0" />
-                    <span className="text-sm">{row.traditional}</span>
-                  </div>
+                <div className="p-5 text-center border-l border-border/60">
+                  <span className="inline-flex items-center gap-1.5 text-sm text-muted-foreground">
+                    <X className="w-4 h-4 flex-shrink-0 opacity-40" />
+                    {row.traditional}
+                  </span>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
           {/* Mobile card view */}
-          <div className="md:hidden space-y-4">
+          <div className="md:hidden space-y-3">
             {comparisonData.map((row, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.05 * index }}
-                className="bg-card rounded-2xl shadow-glow p-6 space-y-4"
+                transition={{ duration: 0.4, delay: 0.04 * index }}
+                className="bg-background rounded-xl border border-border/60 p-5"
               >
-                <h3 className="font-bold text-lg text-foreground mb-3">{row.category}</h3>
+                <h3 className="font-semibold text-sm text-foreground mb-3 uppercase tracking-wider">{row.category}</h3>
                 
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-semibold text-primary mb-1">CustomVideos.ai</div>
-                      <div className="text-sm text-foreground">{row.customVideos}</div>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2.5">
+                    <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                    <div className="text-sm">
+                      <span className="font-medium text-foreground">{row.customVideos}</span>
                     </div>
                   </div>
                   
-                  <div className="flex items-start gap-3">
-                    <X className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-semibold text-muted-foreground mb-1">Traditional Agencies</div>
-                      <div className="text-sm text-muted-foreground">{row.traditional}</div>
+                  <div className="flex items-center gap-2.5">
+                    <X className="w-4 h-4 text-muted-foreground/40 flex-shrink-0" />
+                    <div className="text-sm text-muted-foreground">
+                      {row.traditional}
                     </div>
                   </div>
                 </div>

@@ -10,21 +10,19 @@ const features = [
 
 const WhySection = () => {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div className="absolute inset-0 bg-muted/30" />
-      
+    <section className="section-padding relative overflow-hidden bg-muted/40">
       <div className="container mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-[-0.03em]">
             Why CustomVideos.ai
           </h2>
-          <p className="text-2xl sm:text-3xl text-foreground max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl text-foreground max-w-3xl mx-auto leading-relaxed font-medium">
             High-Quality Video Production — Without the Slow, Expensive Agency Process
           </p>
         </motion.div>
@@ -33,13 +31,13 @@ const WhySection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-3xl mx-auto"
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="max-w-2xl mx-auto"
         >
-          <p className="text-xl text-muted-foreground mb-8 text-center">
+          <p className="text-lg text-muted-foreground mb-6 text-center leading-relaxed">
             Most brands need video content but don't have the time, team, or budget to deal with traditional production studios.
           </p>
-          <p className="text-xl text-foreground font-semibold mb-12 text-center">
+          <p className="text-lg text-foreground font-semibold mb-12 text-center">
             We built an easier, faster, more modern way.
           </p>
 
@@ -47,16 +45,16 @@ const WhySection = () => {
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 * index }}
-                className="flex items-center gap-3 bg-card p-6 rounded-2xl shadow-glow"
+                transition={{ duration: 0.5, delay: 0.08 * index }}
+                className="flex items-center gap-3.5 bg-background p-5 rounded-2xl shadow-elevated"
               >
-                <div className="flex-shrink-0 w-6 h-6 rounded-full gradient-primary flex items-center justify-center">
-                  <Check className="w-4 h-4 text-white" />
+                <div className="flex-shrink-0 w-7 h-7 rounded-full bg-foreground flex items-center justify-center">
+                  <Check className="w-4 h-4 text-background" />
                 </div>
-                <span className="text-lg font-medium">{feature}</span>
+                <span className="text-base font-medium">{feature}</span>
               </motion.div>
             ))}
           </div>

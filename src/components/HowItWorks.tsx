@@ -4,25 +4,25 @@ import { MessageSquare, Clapperboard, Eye, Rocket } from "lucide-react";
 const steps = [
   {
     icon: MessageSquare,
-    number: "1",
+    number: "01",
     title: "Tell Us What You Need",
     description: "Share your vision, goals, and requirements"
   },
   {
     icon: Clapperboard,
-    number: "2",
+    number: "02",
     title: "We Script, Produce & Edit Your Video",
     description: "Our team creates your video with expert precision"
   },
   {
     icon: Eye,
-    number: "3",
+    number: "03",
     title: "You Review",
     description: "One professional revision round included"
   },
   {
     icon: Rocket,
-    number: "4",
+    number: "04",
     title: "Publish & Grow",
     description: "Launch your video and watch results soar"
   }
@@ -30,26 +30,24 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div className="absolute inset-0 bg-muted/30" />
-      
+    <section className="section-padding relative overflow-hidden bg-muted/40">
       <div className="container mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-[-0.03em]">
             How It Works
           </h2>
-          <p className="text-2xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
             A Seamless, Done-For-You Production Process
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
@@ -61,18 +59,16 @@ const HowItWorks = () => {
                 transition={{ duration: 0.5, delay: 0.1 * index }}
                 className="relative"
               >
-                <div className="bg-card p-8 rounded-3xl shadow-glow h-full">
-                  <div className="gradient-primary w-16 h-16 rounded-2xl flex items-center justify-center mb-6 relative">
-                    <Icon className="w-8 h-8 text-white" />
-                    <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-sm font-bold">
-                      {step.number}
-                    </div>
+                <div className="bg-background border border-border/60 p-7 rounded-2xl shadow-glow h-full">
+                  <span className="text-5xl font-bold text-muted-foreground/20 block mb-4 tracking-tighter">{step.number}</span>
+                  <div className="w-11 h-11 rounded-xl bg-foreground flex items-center justify-center mb-5">
+                    <Icon className="w-5 h-5 text-background" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
-                  <p className="text-muted-foreground">{step.description}</p>
+                  <h3 className="text-lg font-semibold mb-2 leading-snug">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
                 </div>
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-primary to-secondary" />
+                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-px bg-border" />
                 )}
               </motion.div>
             );
@@ -83,8 +79,8 @@ const HowItWorks = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-xl text-center max-w-3xl mx-auto text-foreground font-medium"
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="text-lg text-center max-w-2xl mx-auto text-foreground font-medium"
         >
           Get the polish of a premium video agency — without the delays, overhead, or endless meetings.
         </motion.p>
