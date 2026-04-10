@@ -10,53 +10,51 @@ const features = [
 
 const WhySection = () => {
   return (
-    <section className="section-padding relative overflow-hidden">
-      <div className="absolute inset-0 bg-muted/30" />
+    <section className="section-padding relative overflow-hidden bg-muted/40">
       <div className="container mx-auto relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-20"
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center mb-16"
         >
-          <span className="section-label">Why us</span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-extrabold mb-6 tracking-[-0.04em] leading-[1.1]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-[-0.03em]">
             Why CustomVideos.ai
           </h2>
-          <p className="text-xl sm:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed font-medium">
+          <p className="text-xl sm:text-2xl text-foreground max-w-3xl mx-auto leading-relaxed font-medium">
             High-Quality Video Production — Without the Slow, Expensive Agency Process
           </p>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.1 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
           className="max-w-2xl mx-auto"
         >
-          <p className="text-lg text-muted-foreground mb-5 text-center leading-[1.8]">
+          <p className="text-lg text-muted-foreground mb-6 text-center leading-relaxed">
             Most brands need video content but don't have the time, team, or budget to deal with traditional production studios.
           </p>
-          <p className="text-lg text-foreground font-semibold mb-14 text-center">
+          <p className="text-lg text-foreground font-semibold mb-12 text-center">
             We built an easier, faster, more modern way.
           </p>
 
-          <div className="grid sm:grid-cols-2 gap-3.5">
+          <div className="grid sm:grid-cols-2 gap-4">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 14 }}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.06 * index }}
-                className="flex items-center gap-4 bg-card p-5 rounded-2xl card-surface-hover"
+                transition={{ duration: 0.5, delay: 0.08 * index }}
+                className="flex items-center gap-3.5 bg-background p-5 rounded-2xl shadow-elevated"
               >
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-foreground flex items-center justify-center">
-                  <Check className="w-4 h-4 text-background" strokeWidth={2.5} />
+                <div className="flex-shrink-0 w-7 h-7 rounded-full bg-foreground flex items-center justify-center">
+                  <Check className="w-4 h-4 text-background" />
                 </div>
-                <span className="text-[15px] font-medium">{feature}</span>
+                <span className="text-base font-medium">{feature}</span>
               </motion.div>
             ))}
           </div>

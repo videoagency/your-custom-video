@@ -30,18 +30,16 @@ const includes = [
 
 const Pricing = () => {
   return (
-    <section className="section-padding relative overflow-hidden">
-      <div className="absolute inset-0 bg-muted/30" />
+    <section className="section-padding relative overflow-hidden bg-muted/40">
       <div className="container mx-auto relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-20"
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center mb-16"
         >
-          <span className="section-label">Pricing</span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-extrabold mb-5 tracking-[-0.04em] leading-[1.1]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-[-0.03em]">
             Pricing Overview
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground">
@@ -49,49 +47,49 @@ const Pricing = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-5 max-w-4xl mx-auto mb-16">
+        <div className="grid md:grid-cols-3 gap-5 max-w-4xl mx-auto mb-14">
           {pricingTiers.map((tier, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.08 * index }}
-              className={`bg-card p-8 rounded-2xl relative transition-all duration-500 ${
+              transition={{ duration: 0.5, delay: 0.1 * index }}
+              className={`bg-background p-7 rounded-2xl relative border transition-all ${
                 tier.popular 
-                  ? 'border-2 border-foreground shadow-dramatic scale-[1.02]' 
-                  : 'border border-border/50 shadow-glow hover:shadow-elevated'
+                  ? 'border-foreground shadow-elevated ring-1 ring-foreground' 
+                  : 'border-border/60 shadow-glow'
               }`}
             >
               {tier.popular && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <div className="bg-foreground text-background text-[11px] font-bold px-5 py-1.5 rounded-full tracking-[0.1em] uppercase">
+                  <div className="bg-foreground text-background text-xs font-semibold px-4 py-1.5 rounded-full tracking-wide uppercase">
                     Most Popular
                   </div>
                 </div>
               )}
-              <p className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-[0.15em]">{tier.name}</p>
-              <div className="text-3xl sm:text-4xl font-extrabold text-foreground mb-2 tracking-[-0.04em]">{tier.price}</div>
+              <p className="text-sm font-medium text-muted-foreground mb-1 uppercase tracking-wider">{tier.name}</p>
+              <div className="text-3xl sm:text-4xl font-bold text-foreground mb-2 tracking-tight">{tier.price}</div>
               <p className="text-sm text-muted-foreground">{tier.description}</p>
             </motion.div>
           ))}
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="max-w-md mx-auto bg-card p-8 rounded-2xl card-surface"
+          transition={{ duration: 0.7, delay: 0.25 }}
+          className="max-w-md mx-auto bg-background border border-border/60 p-7 rounded-2xl shadow-glow"
         >
-          <h3 className="text-lg font-bold mb-6 text-center">Every Package Includes:</h3>
-          <div className="space-y-4">
+          <h3 className="text-lg font-bold mb-5 text-center">Every Package Includes:</h3>
+          <div className="space-y-3.5">
             {includes.map((item, index) => (
-              <div key={index} className="flex items-center gap-3.5">
+              <div key={index} className="flex items-center gap-3">
                 <div className="flex-shrink-0 w-5 h-5 rounded-full bg-foreground flex items-center justify-center">
-                  <Check className="w-3 h-3 text-background" strokeWidth={3} />
+                  <Check className="w-3 h-3 text-background" />
                 </div>
-                <span className="text-[15px] font-medium">{item}</span>
+                <span className="text-base">{item}</span>
               </div>
             ))}
           </div>

@@ -29,48 +29,44 @@ const BookCallSection = () => {
   return (
     <section className="section-padding-compact relative">
       <div className="container mx-auto">
-        <div className="max-w-5xl mx-auto bg-foreground text-background rounded-[2rem] p-10 sm:p-14 lg:p-20 relative overflow-hidden">
-          {/* Ambient light effects */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_0%,hsl(var(--primary)/0.2),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_0%_100%,hsl(var(--secondary)/0.1),transparent_50%)]" />
+        <div className="max-w-5xl mx-auto bg-foreground text-background rounded-3xl p-8 sm:p-12 lg:p-16 relative overflow-hidden">
+          {/* Subtle texture */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,hsl(var(--primary)/0.15),transparent_50%)]" />
           
           <div className="relative z-10">
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-center mb-14"
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              className="text-center mb-12"
             >
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-background/40 mb-5 block">
-                Free consultation
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-extrabold mb-6 tracking-[-0.04em] text-background leading-[1.1]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-[-0.03em] text-background">
                 Book a Free Strategy Call
               </h2>
-              <p className="text-lg sm:text-xl text-background/60 max-w-2xl mx-auto leading-[1.7]">
+              <p className="text-lg sm:text-xl text-background/70 max-w-2xl mx-auto leading-relaxed">
                 Get expert guidance on the best video for your brand, your goals, and your budget — no pressure, no hard sell.
               </p>
             </motion.div>
 
-            <div className="grid sm:grid-cols-2 gap-4 mb-14">
+            <div className="grid sm:grid-cols-2 gap-4 mb-12">
               {benefits.map((benefit, index) => {
                 const Icon = benefit.icon;
                 return (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, y: 14 }}
+                    initial={{ opacity: 0, y: 12 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.06 * index }}
-                    className="flex gap-4 bg-background/[0.06] backdrop-blur-sm p-6 rounded-2xl border border-background/[0.08] hover:bg-background/[0.1] transition-colors duration-300"
+                    transition={{ duration: 0.5, delay: 0.08 * index }}
+                    className="flex gap-4 bg-background/8 backdrop-blur-sm p-5 rounded-xl border border-background/10"
                   >
-                    <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-background/[0.12] flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-background/80" strokeWidth={1.5} />
+                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-background/15 flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-background" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-[15px] mb-1 text-background">{benefit.title}</h3>
-                      <p className="text-background/50 text-sm leading-relaxed">{benefit.description}</p>
+                      <h3 className="font-semibold text-base mb-0.5 text-background">{benefit.title}</h3>
+                      <p className="text-background/60 text-sm">{benefit.description}</p>
                     </div>
                   </motion.div>
                 );
@@ -81,13 +77,13 @@ const BookCallSection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.25 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="text-center"
             >
               <Button
                 asChild
                 size="lg"
-                className="bg-background text-foreground hover:bg-background/90 transition-all duration-300 text-base px-11 py-7 rounded-full font-semibold shadow-dramatic hover:scale-[1.02] active:scale-[0.98]"
+                className="bg-background text-foreground hover:bg-background/90 transition-all text-lg px-10 py-7 rounded-full font-semibold shadow-glow-lg"
               >
                 <a href="https://cal.com/customvideos/meeting" target="_blank" rel="noopener noreferrer">
                   Schedule Your Free Call Now
