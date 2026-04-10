@@ -16,16 +16,17 @@ const WhatWeCreate = () => {
     <section className="section-padding relative">
       <div className="container mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-16"
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-[-0.03em]">
+          <span className="section-label">Services</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-extrabold mb-5 tracking-[-0.04em] leading-[1.1]">
             What We Create
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Video Content That Boosts Engagement, Sales & Trust
           </p>
         </motion.div>
@@ -36,16 +37,16 @@ const WhatWeCreate = () => {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.06 * index }}
-                className="bg-background border border-border/60 p-6 sm:p-7 rounded-2xl hover:shadow-elevated transition-all duration-300 group cursor-pointer text-center"
+                transition={{ duration: 0.5, delay: 0.05 * index }}
+                className="group relative bg-card p-7 sm:p-8 rounded-2xl text-center card-surface-hover cursor-pointer"
               >
-                <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center mb-4 mx-auto group-hover:bg-foreground group-hover:text-background transition-colors duration-300">
-                  <Icon className="w-6 h-6" />
+                <div className="w-14 h-14 rounded-2xl bg-muted/80 flex items-center justify-center mb-5 mx-auto group-hover:bg-foreground group-hover:text-background transition-all duration-500 group-hover:rounded-xl group-hover:scale-105">
+                  <Icon className="w-6 h-6" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-sm sm:text-base font-semibold leading-snug">{type.title}</h3>
+                <h3 className="text-sm sm:text-[15px] font-semibold leading-snug">{type.title}</h3>
               </motion.div>
             );
           })}

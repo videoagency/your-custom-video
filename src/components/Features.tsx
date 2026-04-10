@@ -26,16 +26,18 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="section-padding relative overflow-hidden bg-muted/40">
+    <section className="section-padding relative overflow-hidden">
+      <div className="absolute inset-0 bg-muted/30" />
       <div className="container mx-auto relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-16"
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-[-0.03em]">
+          <span className="section-label">Features</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-extrabold mb-5 tracking-[-0.04em] leading-[1.1]">
             Additional Features
           </h2>
         </motion.div>
@@ -46,16 +48,16 @@ const Features = () => {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.08 * index }}
-                className="bg-background border border-border/60 p-7 rounded-2xl shadow-glow"
+                transition={{ duration: 0.5, delay: 0.06 * index }}
+                className="bg-card p-8 rounded-2xl card-surface-hover"
               >
-                <div className="w-11 h-11 rounded-xl bg-foreground flex items-center justify-center mb-5">
-                  <Icon className="w-5 h-5 text-background" />
+                <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center mb-6">
+                  <Icon className="w-5 h-5 text-background" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-base font-semibold mb-2">{feature.title}</h3>
+                <h3 className="text-[15px] font-bold mb-2">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
               </motion.div>
             );

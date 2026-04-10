@@ -27,13 +27,14 @@ const Testimonials = () => {
     <section className="section-padding relative">
       <div className="container mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-16"
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-[-0.03em]">
+          <span className="section-label">Testimonials</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-extrabold mb-5 tracking-[-0.04em] leading-[1.1]">
             Real Results
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground">
@@ -41,25 +42,25 @@ const Testimonials = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 * index }}
-              className="bg-background border border-border/60 p-7 rounded-2xl shadow-glow flex flex-col"
+              transition={{ duration: 0.6, delay: 0.08 * index }}
+              className="bg-card p-8 rounded-2xl card-surface-hover flex flex-col"
             >
-              <div className="flex gap-0.5 mb-5">
+              <div className="flex gap-1 mb-6">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-foreground text-foreground" />
                 ))}
               </div>
-              <p className="text-base mb-6 leading-relaxed flex-1 text-foreground/85">{testimonial.quote}</p>
-              <div className="pt-5 border-t border-border/60">
-                <p className="font-semibold text-sm text-foreground">{testimonial.author}</p>
-                <p className="text-xs text-muted-foreground mt-0.5">{testimonial.role}</p>
+              <p className="text-[15px] mb-8 leading-[1.75] flex-1 text-foreground/80">{testimonial.quote}</p>
+              <div className="pt-6 border-t border-border/50">
+                <p className="font-bold text-sm text-foreground">{testimonial.author}</p>
+                <p className="text-xs text-muted-foreground mt-1 tracking-wide">{testimonial.role}</p>
               </div>
             </motion.div>
           ))}
